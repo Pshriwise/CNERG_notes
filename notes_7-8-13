@@ -1,0 +1,22 @@
+Things I've learned while trying to build make_watertight (et. al.) and
+tie itaps into my python distribution.
+
+1) Don't be afraid to ask Andy questions. He's extremely helpful and a nice guy
+2) Don't doubt yourself too much, but you still don't know jack
+3) Environment paths are huge for all of this
+
+the check_watertight algorithm (and I'm assuming the make_watertight algorithm)
+both rely on what version of cubit you are using. This needs to be kept track 
+of thoroughly while doing the testing. 
+
+Remembered another question: Will make_watertight also break an already good 
+geometry?
+
+If make xxxxx isn't working because there are other make files it isn't 
+finding, try just running make first. (You idiot)
+
+Try to keep away from building in your own directory. The CNERG files are 
+already configured appropriately. (Though separate cubit builds will be necesarry 
+it seems)
+
+That's all for now. 

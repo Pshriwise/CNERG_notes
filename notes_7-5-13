@@ -1,0 +1,23 @@
+on mbconvert:
+
+format:
+
+./mbconvert -f {filetype} {input file} {output file}
+
+-to specify the output file type, no period is needed. Only the filetype itself.
+
+
+on check_watertight:
+
+./make_watertight/check_watertight {file}
+
+on tartarus:
+
+./tartarus --dag {file} --pos {cart coord} --nps {# part}
+
+-located in moab_tools
+-tartarus geometry must have a graveyard specified as such in cubit
+
+
+A GOOD FOM ON A FACTED MODEL IS ~1.0E-4
+

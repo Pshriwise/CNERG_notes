@@ -1,0 +1,8 @@
+
+
+
+Things to note about the different cubit versions and run-issues with dagmc_preproc in the manually built versions of moab:
+
+1) if your cubit version is newer than 12.2 then you must export the attributes and set the acis version to 1902 upon exporting the .sat file for dagmc pre-processing
+
+2) the moab versions of dagmc_preproc simply aren't working. There is an error upon trying to read the verticies in the .sat file. No idea why.

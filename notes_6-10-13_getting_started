@@ -1,0 +1,27 @@
+
+
+Information taken from a meeting with Elliott Biondo on 6/10/13:
+
+dagmc allows you to import a separate geometry file into an mcnp run by adding gcad=<geometryfile> to the mcnp
+command line.
+
+these geometry files can be created by maually taking a file and importing it into CUBIT (.sat) or creating a
+full geometry within CUBIT. DAGMC will then preprocess the geometry into an .h5m file and run mcnp unless it is
+directed to only build the geometry file into the .h5m format using the command dagmc_preproc.
+
+inorder to create a .sat file from a manually written mcnp geometry, the mcnp2cad program can be used. 
+
+**NOTE:most of these programs are already buildin the /filespace/groups/cnerg/opt/ directory
+
+additional takeaways on CUBIT:
+
+CUBIT keeps a history of all command line-version things that you do within the program. these can be found in
+the same directory as the geometry file and can be used to redo commands or rebuild geometries if necessary.
+
+-BEFORE trying to use a CUBIT-created geometry, the commands "imprint body all" and "merge body all" must be run
+and resolved in the CUBIT terminal before the mcnp geometry will be considered valid by dagmc or mcnp. This involves verifying that the
+correct surfaces agree with one another and that the proper volumes have been removed or maintained properly. 
+
+MCNP executable location :/filespace/groups/cnerg/opt/DAG_MCNP/bin/data/dag_mcnp...cubit-c12
+
+That's all for now...
