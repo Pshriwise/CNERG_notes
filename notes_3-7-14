@@ -1,0 +1,38 @@
+Meeting w/ Paul, Tim Tautges, Andy, and Rajeev (Argon)
+
+General ides of what we're trying to do:
+    - add a meshing (faceting) capability to meshkit for CGM files. 
+    - replace the current, broken make_watertight with a new, working one
+
+I need to read up on Lasso and iRel before working in Meshkit. They're going to be critical
+to working in that space effectively. 
+
+Right now ReadCGM works in 2 main parts: 
+
+1) getting solid geom entities, making their partners in the MOAB instance, and then
+   creating relationships between then using CGM topology info
+
+2) getting facets for a given set of dimensions or geometry entity
+
+The capability for 1) is already in Meshkit in the form of a function called
+populate_model_entities
+
+The capability for 2) is partially there. There are some functions like vertex_mesher that
+can provide some insight into how faceting algorithms are implemented. 
+
+These two capabilities should be used as an example/template for how to to the move of
+ReadCGM into MOAB. 
+
+The current set of algorithms in Meshkit is in /src/algs NOT /algs
+
+For my work, I will create a directory in /src/algs/my_dir. Tests will go in 
+/src/algs/my_tests and will become part of the nightly build tests. 
+
+There's a basic example of a Meshkit implementation in MeshOpTemplate. 
+(Also rumor of a Meshkit example in example_basic.)
+
+The question of mesh tagging has come up. Where should this data be added to the mesh?
+   In Meshkit?
+   In MOAB?
+
+Currently all of this exists in the file MBTagConventions.cpp
