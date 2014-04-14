@@ -1,0 +1,3 @@
+Had an error building MOAB. The make check was failind and trying to run a bash command 'DHAVE_CONFIG_H' because it couldn't find the right compilier name to put in front of the linking flags. 
+
+This turned out to be because the system I was building on didn't have a gfortran compiler installed.
