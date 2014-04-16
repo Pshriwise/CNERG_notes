@@ -1,0 +1,10 @@
+On compiling c++ files
+
+Order matters when creating a compiling command! 
+
+The order should be
+
+
+g++ <source_files> <includes> <libraries> -o <output_name>
+
+--> library orders can sometimes matter as well.
