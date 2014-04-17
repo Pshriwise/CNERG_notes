@@ -1,0 +1,17 @@
+On building triangle with meshkit:
+
+In order to build the triangle libraries in such a way that meshkit will find them
+
+1) add the line:
+
+trilibrary: $(BIN)triangle.o
++    ar r libtriangle.a triangle.o 
+
+   to the make file and run make trilibrary
+
+2) move the triangle.h file into an include dir inside the top trianlge directory
+3) move the libtriangle.a file into a lib dir inside the top triangle directory
+
+NOTE: if you have build meshkit with the --enable-shared flag, your libraries are dynamic and the 
+      triangle libraries must be build as such. This requires you to add an additional flag to the 
+      make file in the CSWITCHES varialbe "-fPIC" which will allow you to link properly. 
